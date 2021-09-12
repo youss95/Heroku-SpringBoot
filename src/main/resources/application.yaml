@@ -1,0 +1,22 @@
+
+server:
+  port: ${port:8080}
+  servlet:
+    encoding:
+      charset: utf-8
+      enabled: true
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://uyu7j8yohcwo35j3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ptqodjq6lbkvi8sh
+    username: pvl2z9rvjte0oygl
+    password: tr6gly1f2giv4hbh
+   
+
+  jpa: 
+    hibernate: 
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  #내가 적은  이름 그대로 컬럼 생성
+    show-sql: true
