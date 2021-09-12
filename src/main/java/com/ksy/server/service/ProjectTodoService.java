@@ -35,7 +35,7 @@ public class ProjectTodoService {
 	public ProjectTodo registerProjectTodo(ProjectTodo todo,Long id) {
 		try {
 		ProjectTask task = taskRepository.findById(id).orElseThrow(()->{
-			throw new CustomIdException("id를 확인");
+			return new CustomIdException("id를 확인");
 			});
 		todo.setProjectTask(task);
 		
