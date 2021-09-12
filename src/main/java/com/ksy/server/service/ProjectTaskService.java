@@ -57,7 +57,7 @@ public class ProjectTaskService {
 	@Transactional(readOnly = true)
 	public ProjectTask getTaskById(Long id) {
 		return projectTaskRepository.findById(id).orElseThrow(()->{
-			throw new CustomIdException("id를 확인");
+			return new CustomIdException("id를 확인");
 			});
 	}
 	 
