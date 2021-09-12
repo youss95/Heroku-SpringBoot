@@ -28,7 +28,7 @@ public class ProjectTaskService {
 	@Transactional
 	public ProjectTask saveProject(ProjectTask projectTask, int userId) {
 		User user = userRepository.findById(userId).orElseThrow(()->{
-			throw new CustomIdException("없는 id");
+			return new CustomIdException("없는 id");
 		});
 		projectTask.setUser(user);
 		return projectTaskRepository.save(projectTask);
@@ -44,7 +44,7 @@ public class ProjectTaskService {
 	public ProjectTask updateById(ProjectTask projectTask,Long id) {
 		//경로에 잘못된 id
 		ProjectTask task = projectTaskRepository.findById(id).orElseThrow(()->{
-			throw new CustomIdException("없는 id");
+			return new CustomIdException("없는 id");
 			});
 		
 		task.setContent(projectTask.getContent());

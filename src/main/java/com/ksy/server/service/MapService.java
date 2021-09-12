@@ -22,7 +22,7 @@ public class MapService {
 	@Transactional
 	public Map saveMap(Map map , int userId) {
 		User user = userRepository.findById(userId).orElseThrow(()->{
-			throw new CustomIdException("id 확인");
+			return new CustomIdException("id 확인");
 		});
 		map.setUser(user);
 		return mapRepository.save(map);		
@@ -35,7 +35,7 @@ public class MapService {
 	
 	public Map getMap(int id) {
 		return mapRepository.findById(id).orElseThrow(()->{
-			throw new CustomIdException("id 확인");
+			return new CustomIdException("id 확인");
 		});
 		
 	}
